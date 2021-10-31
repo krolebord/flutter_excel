@@ -22,7 +22,9 @@ class MainScreen extends HookWidget {
         children: [
           SizedBox(
             height: 80,
-            child: Text('Header'),
+            child: Center(
+              child: Text('Header')
+            ),
           ),
           Expanded(
             child: Row(

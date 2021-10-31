@@ -5,9 +5,7 @@ analyzer:
     - "**/*.g.dart"
     - "**/*.freezed.dart"
     - "**/*.config.dart"
-
-  strong-mode:
-    implicit-dynamic: false
+    - "**/antlr/**"
 
   errors:
     use_key_in_widget_constructors: error

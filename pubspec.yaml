@@ -6,7 +6,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.14.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -15,11 +15,13 @@ dependencies:
   rxdart: ^0.27.2
 
   flutter_hooks: ^0.18.0
-  flutter_bloc: ^7.2.0
+  flutter_bloc: ^7.3.0
   get_it: ^7.2.0
 
-  freezed_annotation: ^0.14.3
-  injectable: ^1.5.0
+  freezed_annotation: any
+  injectable: any
+
+  antlr4: ^4.9.2
 
   cupertino_icons: ^1.0.3
   linked_scroll_controller: ^0.2.0
@@ -30,9 +32,9 @@ dev_dependencies:
 
   flutter_lints: ^1.0.4
 
-  build_runner: ^2.1.2
-  freezed: ^0.14.5
-  injectable_generator: ^1.5.2
+  build_runner: any
+  freezed: any
+  injectable_generator: any
 
 flutter:
   uses-material-design: true
