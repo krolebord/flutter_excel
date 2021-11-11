@@ -12,6 +12,10 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+ColumnStyle _$ColumnStyleFromJson(Map<String, dynamic> json) {
+  return _ColumnStyle.fromJson(json);
+}
+
 /// @nodoc
 class _$ColumnStyleTearOff {
   const _$ColumnStyleTearOff();
@@ -20,6 +24,10 @@ class _$ColumnStyleTearOff {
     return _ColumnStyle(
       width: width,
     );
+  }
+
+  ColumnStyle fromJson(Map<String, Object> json) {
+    return ColumnStyle.fromJson(json);
   }
 }
 
@@ -30,6 +38,7 @@ const $ColumnStyle = _$ColumnStyleTearOff();
 mixin _$ColumnStyle {
   double get width => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $ColumnStyleCopyWith<ColumnStyle> get copyWith =>
       throw _privateConstructorUsedError;
@@ -97,9 +106,14 @@ class __$ColumnStyleCopyWithImpl<$Res> extends _$ColumnStyleCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_ColumnStyle with DiagnosticableTreeMixin implements _ColumnStyle {
   const _$_ColumnStyle({required this.width});
+
+  factory _$_ColumnStyle.fromJson(Map<String, dynamic> json) =>
+      _$_$_ColumnStyleFromJson(json);
 
   @override
   final double width;
@@ -133,10 +147,18 @@ class _$_ColumnStyle with DiagnosticableTreeMixin implements _ColumnStyle {
   @override
   _$ColumnStyleCopyWith<_ColumnStyle> get copyWith =>
       __$ColumnStyleCopyWithImpl<_ColumnStyle>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ColumnStyleToJson(this);
+  }
 }
 
 abstract class _ColumnStyle implements ColumnStyle {
   const factory _ColumnStyle({required double width}) = _$_ColumnStyle;
+
+  factory _ColumnStyle.fromJson(Map<String, dynamic> json) =
+      _$_ColumnStyle.fromJson;
 
   @override
   double get width => throw _privateConstructorUsedError;

@@ -3,6 +3,10 @@ import 'package:flutter_excel/helpers/index_converters.dart';
 class CellName {
   final int row;
   final int column;
+
+  String get rowName => row.toString();
+  String get columnName => columnNameFromInt(column);
+
   final String text;
 
   const CellName._({
@@ -32,15 +36,15 @@ class CellName {
   @override
   String toString() => text;
 
+  String toJson() => text;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is CellName &&
-          runtimeType == other.runtimeType &&
-          row == other.row &&
-          column == other.column &&
-          text == other.text;
+        other is CellName &&
+        runtimeType == other.runtimeType &&
+        text == other.text;
 
   @override
-  int get hashCode => row.hashCode ^ column.hashCode ^ text.hashCode;
+  int get hashCode => text.hashCode;
 }

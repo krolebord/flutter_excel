@@ -1,6 +1,6 @@
 grammar table;
 
-NUMBER: [0-9]+;
+NUMBER: [0-9]+([.][0-9]+)?;
 BOOLEAN: 'true' | 'false';
 CELL: [A-Z]+[0-9]+;
 

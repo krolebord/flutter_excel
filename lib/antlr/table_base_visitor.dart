@@ -11,7 +11,7 @@ import 'table_visitor.dart';
 ///
 /// [T] is the return type of the visit operation. Use `void` for
 /// operations with no return type.
-abstract class tableBaseVisitor<T> extends ParseTreeVisitor<T> implements tableVisitor<T> {
+class tableBaseVisitor<T> extends ParseTreeVisitor<T> implements tableVisitor<T> {
   /// The default implementation returns the result of calling
   /// [visitChildren] on [ctx].
   @override
@@ -79,5 +79,5 @@ abstract class tableBaseVisitor<T> extends ParseTreeVisitor<T> implements tableV
   /// The default implementation returns the result of calling
   /// [visitChildren] on [ctx].
   @override
-  T visitCell_expression(Cell_expressionContext ctx) => visitChildren(ctx);
+  T visitCellExpression(Cell_expressionContext ctx) => visitChildren(ctx);
 }

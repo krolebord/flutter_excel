@@ -12,6 +12,10 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+RowStyle _$RowStyleFromJson(Map<String, dynamic> json) {
+  return _RowStyle.fromJson(json);
+}
+
 /// @nodoc
 class _$RowStyleTearOff {
   const _$RowStyleTearOff();
@@ -20,6 +24,10 @@ class _$RowStyleTearOff {
     return _RowStyle(
       height: height,
     );
+  }
+
+  RowStyle fromJson(Map<String, Object> json) {
+    return RowStyle.fromJson(json);
   }
 }
 
@@ -30,6 +38,7 @@ const $RowStyle = _$RowStyleTearOff();
 mixin _$RowStyle {
   double get height => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $RowStyleCopyWith<RowStyle> get copyWith =>
       throw _privateConstructorUsedError;
@@ -93,9 +102,14 @@ class __$RowStyleCopyWithImpl<$Res> extends _$RowStyleCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_RowStyle implements _RowStyle {
   const _$_RowStyle({required this.height});
+
+  factory _$_RowStyle.fromJson(Map<String, dynamic> json) =>
+      _$_$_RowStyleFromJson(json);
 
   @override
   final double height;
@@ -121,10 +135,17 @@ class _$_RowStyle implements _RowStyle {
   @override
   _$RowStyleCopyWith<_RowStyle> get copyWith =>
       __$RowStyleCopyWithImpl<_RowStyle>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_RowStyleToJson(this);
+  }
 }
 
 abstract class _RowStyle implements RowStyle {
   const factory _RowStyle({required double height}) = _$_RowStyle;
+
+  factory _RowStyle.fromJson(Map<String, dynamic> json) = _$_RowStyle.fromJson;
 
   @override
   double get height => throw _privateConstructorUsedError;

@@ -138,7 +138,7 @@ class tableParser extends Parser {
         context = _localctx;
         _prevctx = _localctx;
         state = 21;
-        cell_expression();
+        _localctx.cell = cell_expression();
         break;
       default:
         throw NoViableAltException(this);
@@ -289,7 +289,7 @@ class tableParser extends Parser {
         context = _localctx;
         _prevctx = _localctx;
         state = 51;
-        cell_expression();
+        _localctx.cell = cell_expression();
         break;
       }
       context.stop = tokenStream.LT(-1);
@@ -559,6 +559,7 @@ class NegativeContext extends Num_expressionContext {
 }
 
 class NumCellContext extends Num_expressionContext {
+  Cell_expressionContext? cell;
   Cell_expressionContext cell_expression() => getRuleContext<Cell_expressionContext>(0);
   NumCellContext(Num_expressionContext ctx) { copyFrom(ctx); }
   @override
@@ -603,6 +604,7 @@ class NumParenthesisContext extends Num_expressionContext {
     }
   }
 }class BoolCellContext extends Bool_expressionContext {
+  Cell_expressionContext? cell;
   Cell_expressionContext cell_expression() => getRuleContext<Cell_expressionContext>(0);
   BoolCellContext(Bool_expressionContext ctx) { copyFrom(ctx); }
   @override

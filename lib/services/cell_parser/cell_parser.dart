@@ -2,15 +2,16 @@ import 'package:antlr4/antlr4.dart';
 import 'package:flutter_excel/antlr/table_lexer.dart';
 import 'package:flutter_excel/antlr/table_parser.dart';
 import 'package:flutter_excel/antlr/table_visitor.dart';
-import 'package:flutter_excel/helpers/index_converters.dart';
 import 'package:flutter_excel/models/exceptions/cell_parser_error.dart';
 import 'package:flutter_excel/models/parsing/parsing_result.dart';
 import 'package:flutter_excel/models/table/cell_name/cell_name.dart';
-import 'package:flutter_excel/models/table_data.dart';
+import 'package:flutter_excel/models/table/table_data.dart';
 import 'package:flutter_excel/services/cell_parser/exception_error_listener.dart';
 
-class CellParser {
-  ParsingResult evaluate(String expression, TableData table) {
+abstract class CellParser {
+  CellParser._();
+
+  static ParsingResult evaluate(String expression, TableData table) {
     final stream = InputStream.fromString(expression);
 
     final lexer = tableLexer(stream)
@@ -57,7 +58,7 @@ class _CellParserVisitor extends tableVisitor<dynamic> {
 
     final cell = table.getCell(cellName);
 
-    return cell.data.value;
+    return cell.value;
   }
 
   @override
